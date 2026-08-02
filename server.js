@@ -1,0 +1,3 @@
+const http=require('http'),fs=require('fs'),path=require('path'),root=__dirname;
+const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8'};
+http.createServer((req,res)=>{const requested=req.url.split('?')[0],f=requested==='/'?'index.html':requested.slice(1),p=path.resolve(root,f);if(!p.startsWith(root)||!fs.existsSync(p))return res.writeHead(404).end('Not found');res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});fs.createReadStream(p).pipe(res)}).listen(process.env.PORT||3000,()=>console.log('Ready: http://localhost:3000'));
