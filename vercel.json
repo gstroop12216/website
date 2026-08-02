@@ -3,6 +3,6 @@
   "framework": null,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/:endpoint*", "destination": "/api/index" }
+    { "source": "/api/events/:id", "destination": "/api/event" }
   ]
 }
