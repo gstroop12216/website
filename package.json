@@ -2,6 +2,13 @@
   "name": "gs-troop-12216",
   "version": "1.0.0",
   "private": true,
-  "scripts": { "start": "node server.js" },
-  "engines": { "node": ">=18" }
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.6.1"
+  }
 }
